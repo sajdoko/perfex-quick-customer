@@ -1,0 +1,37 @@
+/**
+ * Quick Customer Module Styles
+ */
+
+#quick-customer-btn {
+    margin-top: 1em;
+}
+
+.form-group.select-placeholder {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.form-group.select-placeholder > div:first-child {
+    flex: 1;
+}
+
+#quick-customer-modal .modal-dialog {
+    max-width: 900px;
+}
+
+#quick-customer-modal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0 1.25rem;
+}
+
+#quick-customer-modal h5 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#quick-customer-modal .checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

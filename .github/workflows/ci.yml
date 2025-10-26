@@ -1,0 +1,58 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  php-syntax:
+    name: PHP Syntax Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        
+    - name: Check PHP Syntax
+      run: |
+        find . -name "*.php" -exec php -l {} \;
+
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Lint Markdown files
+      uses: avto-dev/markdown-lint@v1
+      with:
+        args: '**/*.md'
+        config: '.markdownlint.json'
+        ignore: 'node_modules'
+        
+  validate-structure:
+    name: Validate Module Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check required files exist
+      run: |
+        test -f quick_customer.php || exit 1
+        test -f install.php || exit 1
+        test -f README.md || exit 1
+        test -f LICENSE || exit 1
+        test -f CHANGELOG.md || exit 1
+        test -d assets || exit 1
+        test -d controllers || exit 1
+        test -d language || exit 1
+        test -d views || exit 1
+        echo "All required files and directories exist!"

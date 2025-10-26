@@ -1,0 +1,26 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.bak
+
+# Node modules (if you add any build tools)
+node_modules/
+package-lock.json
+
+# Composer vendor (if you add dependencies)
+vendor/
+composer.lock
