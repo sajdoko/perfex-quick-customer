@@ -145,15 +145,15 @@ modules/
 
 ### Quick Add Button on Invoice Page
 
-![Quick Add Button](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Quick_Add_button_next_to_customer_dropdown.png)
+![Quick Add Button](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Quick_Add_button_next_to_customer_dropdown.png)
 
 ### Customer Creation Modal
 
-![Customer Creation Modal](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Customer_Creation_Modal.png)
+![Customer Creation Modal](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Customer_Creation_Modal.png)
 
 ### Auto-Selected Customer
 
-![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Newly_Created_Customer_Auto_Selected.png)
+![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Newly_Created_Customer_Auto_Selected.png)
 
 > 📷 **Want to contribute screenshots?** See [Contributing](#-contributing) section below!
 
