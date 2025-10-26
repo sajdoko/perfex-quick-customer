@@ -20,6 +20,7 @@
 The **Quick Customer** module streamlines your invoice workflow by allowing you to create new customers directly from the invoice creation page via a convenient modal popup. No more navigating away to the customers section—stay focused on creating invoices faster.
 
 Perfect for:
+
 - 💼 Sales teams who need to create invoices quickly
 - 📊 Accountants managing multiple client invoices
 - 🏢 Businesses with high-volume customer onboarding
@@ -143,13 +144,16 @@ modules/
 ## 📸 Screenshots
 
 ### Quick Add Button on Invoice Page
-*Coming soon - Screenshot showing the Quick Add button next to customer dropdown*
+
+![Quick Add Button](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Quick_Add_button_next_to_customer_dropdown.png)
 
 ### Customer Creation Modal
-*Coming soon - Screenshot of the modal form with all fields*
+
+![Customer Creation Modal](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Customer_Creation_Modal.png)
 
 ### Auto-Selected Customer
-*Coming soon - Screenshot showing newly created customer auto-selected*
+
+![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/main/assets/screenshots/Newly_Created_Customer_Auto_Selected.png)
 
 > 📷 **Want to contribute screenshots?** See [Contributing](#-contributing) section below!
 
@@ -330,6 +334,7 @@ Edit `views/customer_modal.php` to change which fields are required:
 **Returns:** JSON with customer data
 
 **Request Payload:**
+
 ```json
 {
   "company": "Company Name",
@@ -350,6 +355,7 @@ Edit `views/customer_modal.php` to change which fields are required:
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,

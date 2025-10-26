@@ -19,7 +19,7 @@ We take the security of Quick Customer module seriously. If you believe you have
 
 ### Please DO:
 
-1. **Email us directly** at [your-email@example.com] with:
+1. **Email us directly** at [security@sajdoko.com](mailto:security@sajdoko.com) with:
    - A description of the vulnerability
    - Steps to reproduce the issue
    - Potential impact
