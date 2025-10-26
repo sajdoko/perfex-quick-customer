@@ -153,7 +153,7 @@ modules/
 
 ### Auto-Selected Customer
 
-![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Newly_Created_Customer_Auto_Selected.png)
+![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Newly_Created_Customer_Auto_Selected_Customer.png)
 
 > 📷 **Want to contribute screenshots?** See [Contributing](#-contributing) section below!
 
