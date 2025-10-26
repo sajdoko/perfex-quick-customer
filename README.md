@@ -52,10 +52,10 @@ Perfect for:
 Clone this repository or download the ZIP file:
 
 ```bash
-git clone https://github.com/yourusername/perfex-quick-customer.git
+git clone https://github.com/sajdoko/perfex-quick-customer.git
 ```
 
-Or download directly from [Releases](https://github.com/yourusername/perfex-quick-customer/releases).
+Or download directly from [Releases](https://github.com/sajdoko/perfex-quick-customer/releases).
 
 ### Step 2: Upload Module Files
 
@@ -311,7 +311,7 @@ Edit `views/customer_modal.php` to change which fields are required:
 - Ensure no custom CSS is overriding module styles
 - Clear browser cache
 
-> 🔧 **Still having issues?** Check our [Troubleshooting Guide](USAGE.md#troubleshooting) or [open an issue](https://github.com/yourusername/perfex-quick-customer/issues).
+> 🔧 **Still having issues?** Check our [Troubleshooting Guide](USAGE.md#troubleshooting) or [open an issue](https://github.com/sajdoko/perfex-quick-customer/issues).
 
 ---
 
@@ -391,7 +391,7 @@ We welcome contributions from the community! Here's how you can help:
 
 ### Reporting Bugs
 
-1. Check if the issue already exists in [Issues](https://github.com/yourusername/perfex-quick-customer/issues)
+1. Check if the issue already exists in [Issues](https://github.com/sajdoko/perfex-quick-customer/issues)
 2. Create a new issue with:
    - Clear title and description
    - Steps to reproduce
@@ -446,7 +446,7 @@ We need help translating the module! To add a language:
 - [ ] Custom field support in modal
 - [ ] Mobile app compatibility
 
-Vote for features or suggest new ones in [Issues](https://github.com/yourusername/perfex-quick-customer/issues)!
+Vote for features or suggest new ones in [Issues](https://github.com/sajdoko/perfex-quick-customer/issues)!
 
 ---
 
@@ -483,8 +483,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Need help? Here are your options:
 
 1. 📖 Check the [Documentation](USAGE.md)
-2. 🐛 [Report a Bug](https://github.com/yourusername/perfex-quick-customer/issues)
-3. 💡 [Request a Feature](https://github.com/yourusername/perfex-quick-customer/issues)
+2. 🐛 [Report a Bug](https://github.com/sajdoko/perfex-quick-customer/issues)
+3. 💡 [Request a Feature](https://github.com/sajdoko/perfex-quick-customer/issues)
 4. ⭐ Star this repo if you find it useful!
 
 ---
@@ -501,6 +501,6 @@ Need help? Here are your options:
 
 **Made with ❤️ for Perfex CRM users**
 
-[Report Bug](https://github.com/yourusername/perfex-quick-customer/issues) • [Request Feature](https://github.com/yourusername/perfex-quick-customer/issues) • [View Documentation](USAGE.md)
+[Report Bug](https://github.com/sajdoko/perfex-quick-customer/issues) • [Request Feature](https://github.com/sajdoko/perfex-quick-customer/issues) • [View Documentation](USAGE.md)
 
 </div>
