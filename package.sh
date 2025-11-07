@@ -30,11 +30,11 @@ rsync -av --progress . "$TEMP_DIR" \
 # Create ZIP archive
 echo "Creating ZIP archive..."
 cd /tmp
-zip -r "${ARCHIVE_NAME}.zip" "$MODULE_NAME"
+zip -r "${ARCHIVE_NAME}.zip" "$MODULE_NAME/"
 
 # Create tar.gz archive
 echo "Creating tar.gz archive..."
-tar -czf "${ARCHIVE_NAME}.tar.gz" "$MODULE_NAME"
+tar -czf "${ARCHIVE_NAME}.tar.gz" "$MODULE_NAME/"
 
 # Move archives to original directory
 mv "${ARCHIVE_NAME}.zip" "$OLDPWD/"

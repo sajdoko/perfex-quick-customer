@@ -14,27 +14,33 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          path: quick_customer
 
       - name: Create properly named archive
         run: |
-          # Create a zip file with the correct folder structure
-          cd quick_customer
-          zip -r ../quick_customer-${GITHUB_REF#refs/tags/}.zip . \
-            -x "*.git*" \
-            -x "*.github*" \
-            -x "*CONTRIBUTING.md" \
-            -x "*SECURITY.md"
+          # Create a temporary directory with the module name
+          mkdir -p temp_build/quick_customer
+          
+          # Copy files excluding development files
+          rsync -av --progress . temp_build/quick_customer/ \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitattributes' \
+            --exclude='.gitignore' \
+            --exclude='*.md' \
+            --exclude='temp_build' \
+            --exclude='package.ps1' \
+            --exclude='package.sh' \
+          
+          # Create ZIP archive with quick_customer folder at root
+          cd temp_build
+          zip -r ../quick_customer-${GITHUB_REF#refs/tags/}.zip quick_customer/
+          
+          # Create tar.gz archive with quick_customer folder at root
+          tar -czf ../quick_customer-${GITHUB_REF#refs/tags/}.tar.gz quick_customer/
           cd ..
-
-          # Also create a tar.gz version
-          tar -czf quick_customer-${GITHUB_REF#refs/tags/}.tar.gz \
-            --exclude=".git*" \
-            --exclude=".github*" \
-            --exclude="CONTRIBUTING.md" \
-            --exclude="SECURITY.md" \
-            -C quick_customer .
+          
+          # Cleanup
+          rm -rf temp_build
 
       - name: Extract version info
         id: version
@@ -52,9 +58,9 @@ jobs:
             ### Installation Instructions
 
             1. Download `quick_customer-v${{ steps.version.outputs.version }}.zip` below
-            2. Extract the archive - it will create a `quick_customer` folder
-            3. Upload the entire `quick_customer` folder to your Perfex CRM `modules/` directory
-            4. Go to Setup → Modules in Perfex CRM
+            2. Go to Setup → Modules in Perfex CRM
+            3. Click on "Upload Module"
+            4. Select the downloaded ZIP file and upload it
             5. Find "Quick Customer" and click Activate
 
             ⚠️ **Important:** The folder must be named exactly `quick_customer` inside the `modules/` directory.
@@ -66,7 +72,6 @@ jobs:
             ### Documentation
 
             - [Installation Guide](https://github.com/sajdoko/perfex-quick-customer/blob/master/INSTALL.md)
-            - [Usage Guide](https://github.com/sajdoko/perfex-quick-customer/blob/master/USAGE.md)
             - [Full README](https://github.com/sajdoko/perfex-quick-customer/blob/master/README.md)
           files: |
             quick_customer-v*.zip

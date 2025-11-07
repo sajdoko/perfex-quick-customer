@@ -50,14 +50,16 @@ Get-ChildItem -Path . -Recurse | ForEach-Object {
     }
 }
 
-# Create archive
+# Create archive with quick_customer folder at root
 Write-Host "Creating ZIP archive..." -ForegroundColor Yellow
 $archivePath = Join-Path $PWD "$ARCHIVE_NAME.zip"
 if (Test-Path $archivePath) {
     Remove-Item $archivePath -Force
 }
 
-Compress-Archive -Path "$tempDir\*" -DestinationPath $archivePath
+# Compress from parent directory to include the folder name
+$parentTemp = Split-Path $tempDir -Parent
+Compress-Archive -Path $tempDir -DestinationPath $archivePath
 
 # Cleanup
 Remove-Item $tempDir -Recurse -Force
