@@ -72,12 +72,3 @@ modules/quick_customer/
 
 - See full README.md for detailed documentation
 - Check browser console for errors (F12)
-
-## Next Steps
-
-- Read the full **README.md** for customization options
-- Add translations for other languages
-- Customize button text or styling
-- Add custom fields as needed
-
-Enjoy faster invoice creation! 🚀

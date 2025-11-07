@@ -24,3 +24,10 @@ package-lock.json
 # Composer vendor (if you add dependencies)
 vendor/
 composer.lock
+
+# Perfex CRM specific
+uploads/temp/
+uploads/backup/
+
+# Agent Instructions
+.github/copilot*.md

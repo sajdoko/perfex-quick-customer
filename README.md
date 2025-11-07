@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Quick Customer Module for Perfex CRM
+# Quick Customer Module for Perfex CRM
 
 [![Perfex CRM](https://img.shields.io/badge/Perfex%20CRM-2.3.0%2B-blue.svg)](https://www.perfexcrm.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -15,31 +15,31 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 The **Quick Customer** module streamlines your invoice workflow by allowing you to create new customers directly from the invoice creation page via a convenient modal popup. No more navigating away to the customers section—stay focused on creating invoices faster.
 
 Perfect for:
 
-- 💼 Sales teams who need to create invoices quickly
-- 📊 Accountants managing multiple client invoices
-- 🏢 Businesses with high-volume customer onboarding
-- ⚡ Anyone who values workflow efficiency
+- Sales teams who need to create invoices quickly
+- Accountants managing multiple client invoices
+- Businesses with high-volume customer onboarding
+- Anyone who values workflow efficiency
 
-## ✨ Features
+## Features
 
-- ✅ **Quick Add Button** - Adds a "Quick Add" button next to the customer dropdown on invoice pages
-- 📝 **Modal Form** - Clean, comprehensive modal form for customer creation
-- 📋 **Full Customer Data** - Capture company info, contact details, billing and shipping addresses
-- 🎯 **Auto-Select** - Automatically selects the newly created customer in the invoice
-- ⚡ **Auto-Fill Billing** - Updates invoice billing/shipping information immediately
-- 🔐 **Permission Aware** - Respects Perfex CRM's customer creation permissions
-- 🗄️ **No Database Changes** - Pure functionality module, no schema modifications
-- 🎨 **Bootstrap 3 Compatible** - Matches Perfex CRM's UI/UX perfectly
-- 🌍 **Translation Ready** - Easy to translate into any language
-- 📱 **Responsive Design** - Works on desktop and tablet devices
+- **Quick Add Button** - Adds a "Quick Add" button next to the customer dropdown on invoice pages
+- **Modal Form** - Clean, comprehensive modal form for customer creation
+- **Full Customer Data** - Capture company info, contact details, billing and shipping addresses
+- **Auto-Select** - Automatically selects the newly created customer in the invoice
+- **Auto-Fill Billing** - Updates invoice billing/shipping information immediately
+- **Permission Aware** - Respects Perfex CRM's customer creation permissions
+- **No Database Changes** - Pure functionality module, no schema modifications
+- **Bootstrap 3 Compatible** - Matches Perfex CRM's UI/UX perfectly
+- **Translation Ready** - Easy to translate into any language
+- **Responsive Design** - Works on desktop and tablet devices
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
@@ -96,11 +96,11 @@ modules/
 2. Click **Create New Invoice**
 3. You should see a blue **"Quick Add"** button next to the customer dropdown
 
-> 📝 **Note:** For detailed installation instructions, see [INSTALL.md](INSTALL.md)
+> **Note:** For detailed installation instructions, see [INSTALL.md](INSTALL.md)
 
 ---
 
-## 🎯 Usage
+## Usage
 
 ### Creating a Customer from Invoice Page
 
@@ -137,11 +137,9 @@ modules/
    - Customer is created and automatically selected in the invoice
    - Billing/shipping information is populated automatically
 
-> 💡 **Tip:** For detailed usage examples and visual guide, see [USAGE.md](USAGE.md) and [VISUAL_GUIDE.md](VISUAL_GUIDE.md)
-
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Quick Add Button on Invoice Page
 
@@ -155,11 +153,11 @@ modules/
 
 ![Auto-Selected Customer](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Newly_Created_Customer_Auto_Selected_Customer.png)
 
-> 📷 **Want to contribute screenshots?** See [Contributing](#-contributing) section below!
+> **Want to contribute screenshots?** See [Contributing](#-contributing) section below!
 
 ---
 
-## 🛠️ Customization
+## Customization
 
 ### Files Explained
 
@@ -204,9 +202,9 @@ modules/
 
 ---
 
-## 🎨 Customization
+## Customization
 
-## 🏗️ Module Structure
+## Module Structure
 
 ### Files Explained
 
@@ -257,7 +255,7 @@ $customer_data['custom_field'] = $data['custom_field'] ?? '';
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 Edit `views/customer_modal.php` to change which fields are required:
 
@@ -315,11 +313,9 @@ Edit `views/customer_modal.php` to change which fields are required:
 - Ensure no custom CSS is overriding module styles
 - Clear browser cache
 
-> 🔧 **Still having issues?** Check our [Troubleshooting Guide](USAGE.md#troubleshooting) or [open an issue](https://github.com/sajdoko/perfex-quick-customer/issues).
-
 ---
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Hooks Used
 
@@ -391,7 +387,7 @@ Edit `views/customer_modal.php` to change which fields are required:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from the community! Here's how you can help:
 
@@ -442,7 +438,7 @@ We need help translating the module! To add a language:
 
 ---
 
-## 📊 Roadmap
+## Roadmap
 
 - [ ] Add customer templates/presets
 - [ ] Bulk customer import from modal
@@ -456,27 +452,27 @@ Vote for features or suggest new ones in [Issues](https://github.com/sajdoko/per
 
 ---
 
-## 📜 Version History
+## Version History
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 **Current Version:** 1.0.0
 
-- ✅ Initial release
-- ✅ Quick customer creation from invoice page
-- ✅ Full billing/shipping address support
-- ✅ Auto-selection and auto-fill
-- ✅ Permission-aware functionality
+- Initial release
+- Quick customer creation from invoice page
+- Full billing/shipping address support
+- Auto-selection and auto-fill
+- Permission-aware functionality
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built for [Perfex CRM](https://www.perfexcrm.com/)
 - Inspired by the need for streamlined invoice workflows
@@ -484,22 +480,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 💬 Support
+## Support
 
 Need help? Here are your options:
 
-1. 📖 Check the [Documentation](USAGE.md)
-2. 🐛 [Report a Bug](https://github.com/sajdoko/perfex-quick-customer/issues)
-3. 💡 [Request a Feature](https://github.com/sajdoko/perfex-quick-customer/issues)
-4. ⭐ Star this repo if you find it useful!
+1. [Report a Bug](https://github.com/sajdoko/perfex-quick-customer/issues)
+2. [Request a Feature](https://github.com/sajdoko/perfex-quick-customer/issues)
+3. Star this repo if you find it useful!
 
 ---
 
-## 📢 Stay Updated
+## Stay Updated
 
-- ⭐ Star this repository to stay updated
-- 👁️ Watch for new releases
-- 🍴 Fork to contribute
+- Star this repository to stay updated
+- Watch for new releases
+- Fork to contribute
 
 ---
 
@@ -507,6 +502,6 @@ Need help? Here are your options:
 
 **Made with ❤️ for Perfex CRM users**
 
-[Report Bug](https://github.com/sajdoko/perfex-quick-customer/issues) • [Request Feature](https://github.com/sajdoko/perfex-quick-customer/issues) • [View Documentation](USAGE.md)
+[Report Bug](https://github.com/sajdoko/perfex-quick-customer/issues) • [Request Feature](https://github.com/sajdoko/perfex-quick-customer/issues)
 
 </div>
