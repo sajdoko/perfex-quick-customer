@@ -51,11 +51,14 @@ function quick_customer_is_supported_page()
     $segment1 = $CI->uri->segment(1);
     $segment2 = $CI->uri->segment(2);
 
-    return $segment1 === 'admin' && (
-        $segment2 === 'invoices' || $segment2 === 'invoice' ||
-        $segment2 === 'estimates' || $segment2 === 'estimate' ||
-        $segment2 === 'proposals' || $segment2 === 'proposal'
-    );
+    // Define supported page types
+    $supported_pages = [
+        'invoices', 'invoice',    // Invoice pages
+        'estimates', 'estimate',   // Estimate pages
+        'proposals', 'proposal'    // Proposal pages
+    ];
+
+    return $segment1 === 'admin' && in_array($segment2, $supported_pages, true);
 }
 
 /**

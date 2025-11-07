@@ -8,6 +8,9 @@
     'use strict';
 
     // Customer dropdown selectors for different document types
+    // - Invoices: select[name="clientid"] or #clientid
+    // - Estimates: select[name="clientid"] or #clientid  
+    // - Proposals: select[name="rel_id"]
     var CUSTOMER_DROPDOWN_SELECTORS = 'select[name="clientid"], #clientid, select[name="rel_id"]';
 
     function initQuickCustomer() {
