@@ -1,0 +1,75 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          path: quick_customer
+
+      - name: Create properly named archive
+        run: |
+          # Create a zip file with the correct folder structure
+          cd quick_customer
+          zip -r ../quick_customer-${GITHUB_REF#refs/tags/}.zip . \
+            -x "*.git*" \
+            -x "*.github*" \
+            -x "*CONTRIBUTING.md" \
+            -x "*SECURITY.md"
+          cd ..
+
+          # Also create a tar.gz version
+          tar -czf quick_customer-${GITHUB_REF#refs/tags/}.tar.gz \
+            --exclude=".git*" \
+            --exclude=".github*" \
+            --exclude="CONTRIBUTING.md" \
+            --exclude="SECURITY.md" \
+            -C quick_customer .
+
+      - name: Extract version info
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Quick Customer v${{ steps.version.outputs.version }}
+          body: |
+            ## Quick Customer Module v${{ steps.version.outputs.version }}
+
+            ### Installation Instructions
+
+            1. Download `quick_customer-v${{ steps.version.outputs.version }}.zip` below
+            2. Extract the archive - it will create a `quick_customer` folder
+            3. Upload the entire `quick_customer` folder to your Perfex CRM `modules/` directory
+            4. Go to Setup → Modules in Perfex CRM
+            5. Find "Quick Customer" and click Activate
+
+            ⚠️ **Important:** The folder must be named exactly `quick_customer` inside the `modules/` directory.
+
+            ### Changelog
+
+            See [CHANGELOG.md](https://github.com/sajdoko/perfex-quick-customer/blob/master/CHANGELOG.md) for full details.
+
+            ### Documentation
+
+            - [Installation Guide](https://github.com/sajdoko/perfex-quick-customer/blob/master/INSTALL.md)
+            - [Usage Guide](https://github.com/sajdoko/perfex-quick-customer/blob/master/USAGE.md)
+            - [Full README](https://github.com/sajdoko/perfex-quick-customer/blob/master/README.md)
+          files: |
+            quick_customer-v*.zip
+            quick_customer-v*.tar.gz
+          draft: false
+          prerelease: false

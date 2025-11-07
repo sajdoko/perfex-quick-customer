@@ -56,7 +56,39 @@ modules/quick_customer/
     └── customer_modal.php       # Modal template
 ```
 
+## Important: GitHub Release Installation
+
+If you download from GitHub Releases, the ZIP file will extract as `perfex-quick-customer-x.x.x/` instead of `quick_customer/`.
+
+**You must rename the folder:**
+
+1. Extract the ZIP file
+2. Rename `perfex-quick-customer-x.x.x` to `quick_customer`
+3. Upload the `quick_customer` folder to `modules/`
+
+**Correct structure:**
+```
+modules/
+└── quick_customer/          ← Must be named exactly this
+    ├── quick_customer.php
+    └── ...
+```
+
+**Wrong structure (will not work):**
+```
+modules/
+└── perfex-quick-customer-1.1.0/   ← Wrong! Module won't load
+    ├── quick_customer.php
+    └── ...
+```
+
 ## Troubleshooting
+
+**Module not showing in Setup → Modules?**
+
+- Check folder name is exactly `quick_customer` (not `perfex-quick-customer`)
+- Ensure it's in the `modules/` directory
+- Check file permissions (755 for folders, 644 for files)
 
 **Button not showing?**
 
@@ -68,7 +100,13 @@ modules/quick_customer/
 - Ensure staff has "Create Customers" permission
 - Check: Setup → Staff → [Your Staff] → Permissions
 
+**"No migration found" error?**
+
+- This shouldn't happen with v1.1.0+
+- If it does, deactivate and reactivate the module
+
 **Need help?**
 
 - See full README.md for detailed documentation
 - Check browser console for errors (F12)
+- Report issues: https://github.com/sajdoko/perfex-quick-customer/issues

@@ -50,19 +50,25 @@ Perfect for:
 
 ### Step 1: Download Module
 
-Clone this repository or download the ZIP file:
+**Option A: Download from Releases (Recommended)**
+
+Download the latest release from [Releases](https://github.com/sajdoko/perfex-quick-customer/releases). The release archive is pre-configured with the correct folder name (`quick_customer`).
+
+**Option B: Clone Repository**
 
 ```bash
-git clone https://github.com/sajdoko/perfex-quick-customer.git
+git clone https://github.com/sajdoko/perfex-quick-customer.git quick_customer
 ```
 
-Or download directly from [Releases](https://github.com/sajdoko/perfex-quick-customer/releases).
+Note: Use `quick_customer` as the target folder name, not `perfex-quick-customer`.
 
 ### Step 2: Upload Module Files
 
 1. Navigate to your Perfex CRM installation directory
 2. Go to `modules/` folder
 3. Upload the entire `quick_customer` folder
+
+⚠️ **Important:** The folder MUST be named exactly `quick_customer` (not `perfex-quick-customer` or `perfex-quick-customer-1.1.0`).
 
 Your structure should look like:
 

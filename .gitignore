@@ -29,5 +29,10 @@ composer.lock
 uploads/temp/
 uploads/backup/
 
+# Release archives (created by package scripts)
+*.zip
+*.tar.gz
+quick_customer-v*/
+
 # Agent Instructions
 .github/copilot*.md
