@@ -1,11 +1,17 @@
 /**
  * Quick Customer Module JavaScript
- * Handles the customer creation modal on invoice page
+ * Handles the customer creation modal on invoice, estimate, and proposal pages
  */
 
 // Wait for jQuery to be available
 (function() {
     'use strict';
+
+    // Customer dropdown selectors for different document types
+    // - Invoices: select[name="clientid"] or #clientid
+    // - Estimates: select[name="clientid"] or #clientid  
+    // - Proposals: select[name="rel_id"]
+    var CUSTOMER_DROPDOWN_SELECTORS = 'select[name="clientid"], #clientid, select[name="rel_id"]';
 
     function initQuickCustomer() {
         // Ensure jQuery is loaded
@@ -29,8 +35,8 @@
                     return;
                 }
 
-                // Find the customer dropdown
-                var $clientSelect = $('select[name="clientid"], #clientid');
+                // Find the customer dropdown - try multiple selectors for different pages
+                var $clientSelect = $(CUSTOMER_DROPDOWN_SELECTORS);
 
                 if ($clientSelect.length === 0) {
                     // Try again after a delay
@@ -110,8 +116,11 @@
                             alert_float('success', response.message);
 
                             // Add new option to customer dropdown and select it
+                            // Support different dropdown selectors (invoices, estimates, proposals)
+                            // Use .first() to handle cases where multiple elements might match
+                            var $customerDropdown = $(CUSTOMER_DROPDOWN_SELECTORS).first();
                             var newOption = new Option(response.customer.company, response.customer_id, true, true);
-                            $('#clientid').append(newOption).trigger('change');
+                            $customerDropdown.append(newOption).trigger('change');
 
                             // Trigger customer change to load billing/shipping data
                             if (typeof init_billing_and_shipping_details === 'function') {
