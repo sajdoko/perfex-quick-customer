@@ -43,22 +43,28 @@ function quick_customer_init_menu_items()
 }
 
 /**
+ * Check if current page is a supported document type (invoice, estimate, or proposal)
+ */
+function quick_customer_is_supported_page()
+{
+    $CI = &get_instance();
+    $segment1 = $CI->uri->segment(1);
+    $segment2 = $CI->uri->segment(2);
+
+    return $segment1 === 'admin' && (
+        $segment2 === 'invoices' || $segment2 === 'invoice' ||
+        $segment2 === 'estimates' || $segment2 === 'estimate' ||
+        $segment2 === 'proposals' || $segment2 === 'proposal'
+    );
+}
+
+/**
  * Add module assets (CSS/JS) to admin head
  */
 function quick_customer_add_assets()
 {
-    $CI = &get_instance();
-
     // Load on invoice, estimate, and proposal pages
-    $segment1 = $CI->uri->segment(1);
-    $segment2 = $CI->uri->segment(2);
-
-    // Load on any invoice, estimate, or proposal-related page
-    if ($segment1 === 'admin' && (
-        $segment2 === 'invoices' || $segment2 === 'invoice' ||
-        $segment2 === 'estimates' || $segment2 === 'estimate' ||
-        $segment2 === 'proposals' || $segment2 === 'proposal'
-    )) {
+    if (quick_customer_is_supported_page()) {
         echo '<link href="' . module_dir_url(QUICK_CUSTOMER_MODULE_NAME, 'assets/quick_customer.css') . '?v=' . QUICK_CUSTOMER_MODULE_VERSION . '" rel="stylesheet" type="text/css" />';
         echo '<script src="' . module_dir_url(QUICK_CUSTOMER_MODULE_NAME, 'assets/quick_customer.js') . '?v=' . QUICK_CUSTOMER_MODULE_VERSION . '"></script>';
     }
@@ -69,18 +75,9 @@ function quick_customer_add_assets()
  */
 function quick_customer_add_modal()
 {
-    $CI = &get_instance();
-
     // Load on invoice, estimate, and proposal pages
-    $segment1 = $CI->uri->segment(1);
-    $segment2 = $CI->uri->segment(2);
-
-    // Load on any invoice, estimate, or proposal-related page
-    if ($segment1 === 'admin' && (
-        $segment2 === 'invoices' || $segment2 === 'invoice' ||
-        $segment2 === 'estimates' || $segment2 === 'estimate' ||
-        $segment2 === 'proposals' || $segment2 === 'proposal'
-    )) {
+    if (quick_customer_is_supported_page()) {
+        $CI = &get_instance();
         $CI->load->model('currencies_model');
         $currencies = $CI->currencies_model->get();
 

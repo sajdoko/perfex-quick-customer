@@ -1,11 +1,14 @@
 /**
  * Quick Customer Module JavaScript
- * Handles the customer creation modal on invoice page
+ * Handles the customer creation modal on invoice, estimate, and proposal pages
  */
 
 // Wait for jQuery to be available
 (function() {
     'use strict';
+
+    // Customer dropdown selectors for different document types
+    var CUSTOMER_DROPDOWN_SELECTORS = 'select[name="clientid"], #clientid, select[name="rel_id"]';
 
     function initQuickCustomer() {
         // Ensure jQuery is loaded
@@ -30,7 +33,7 @@
                 }
 
                 // Find the customer dropdown - try multiple selectors for different pages
-                var $clientSelect = $('select[name="clientid"], #clientid, select[name="rel_id"]');
+                var $clientSelect = $(CUSTOMER_DROPDOWN_SELECTORS);
 
                 if ($clientSelect.length === 0) {
                     // Try again after a delay
@@ -111,7 +114,7 @@
 
                             // Add new option to customer dropdown and select it
                             // Support different dropdown selectors (invoices, estimates, proposals)
-                            var $customerDropdown = $('select[name="clientid"], #clientid, select[name="rel_id"]');
+                            var $customerDropdown = $(CUSTOMER_DROPDOWN_SELECTORS);
                             var newOption = new Option(response.customer.company, response.customer_id, true, true);
                             $customerDropdown.append(newOption).trigger('change');
 
