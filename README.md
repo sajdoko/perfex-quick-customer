@@ -17,22 +17,22 @@
 
 ## Overview
 
-The **Quick Customer** module streamlines your invoice workflow by allowing you to create new customers directly from the invoice creation page via a convenient modal popup. No more navigating away to the customers section—stay focused on creating invoices faster.
+The **Quick Customer** module streamlines your workflow by allowing you to create new customers directly from the invoice, estimate, and proposal creation pages via a convenient modal popup. No more navigating away to the customers section—stay focused on creating documents faster.
 
 Perfect for:
 
-- Sales teams who need to create invoices quickly
-- Accountants managing multiple client invoices
+- Sales teams who need to create invoices, estimates, and proposals quickly
+- Accountants managing multiple client documents
 - Businesses with high-volume customer onboarding
 - Anyone who values workflow efficiency
 
 ## Features
 
-- **Quick Add Button** - Adds a "Quick Add" button next to the customer dropdown on invoice pages
+- **Quick Add Button** - Adds a "Quick Add" button next to the customer dropdown on invoice, estimate, and proposal pages
 - **Modal Form** - Clean, comprehensive modal form for customer creation
 - **Full Customer Data** - Capture company info, contact details, billing and shipping addresses
-- **Auto-Select** - Automatically selects the newly created customer in the invoice
-- **Auto-Fill Billing** - Updates invoice billing/shipping information immediately
+- **Auto-Select** - Automatically selects the newly created customer in the document
+- **Auto-Fill Billing** - Updates billing/shipping information immediately
 - **Permission Aware** - Respects Perfex CRM's customer creation permissions
 - **No Database Changes** - Pure functionality module, no schema modifications
 - **Bootstrap 3 Compatible** - Matches Perfex CRM's UI/UX perfectly
@@ -92,8 +92,8 @@ modules/
 
 ### Step 4: Verify Installation
 
-1. Go to **Sales → Invoices**
-2. Click **Create New Invoice**
+1. Go to **Sales → Invoices** (or **Sales → Estimates** or **Sales → Proposals**)
+2. Click **Create New Invoice** (or **Create New Estimate** or **Create New Proposal**)
 3. You should see a blue **"Quick Add"** button next to the customer dropdown
 
 > **Note:** For detailed installation instructions, see [INSTALL.md](INSTALL.md)
@@ -102,10 +102,12 @@ modules/
 
 ## Usage
 
-### Creating a Customer from Invoice Page
+### Creating a Customer from Invoice/Estimate/Proposal Page
 
-1. **Navigate to Invoice Creation**
+1. **Navigate to Document Creation**
    - Go to Sales → Invoices → Create New Invoice
+   - OR Sales → Estimates → Create New Estimate
+   - OR Sales → Proposals → Create New Proposal
 
 2. **Click Quick Add Button**
    - Click the blue "Quick Add" button next to the customer dropdown
@@ -134,7 +136,7 @@ modules/
 
 7. **Create & Select**
    - Click "Create & Select" button
-   - Customer is created and automatically selected in the invoice
+   - Customer is created and automatically selected in the document
    - Billing/shipping information is populated automatically
 
 ---
@@ -144,6 +146,8 @@ modules/
 ### Quick Add Button on Invoice Page
 
 ![Quick Add Button](https://raw.githubusercontent.com/sajdoko/perfex-quick-customer/refs/heads/master/assets/screenshots/Quick_Add_button_next_to_customer_dropdown.png)
+
+*The Quick Add button appears on invoice, estimate, and proposal pages next to the customer dropdown.*
 
 ### Customer Creation Modal
 
@@ -165,7 +169,7 @@ modules/
 
 - Registers the module with Perfex CRM
 - Defines hooks for injecting assets and modal
-- Loads only on invoice pages for performance
+- Loads on invoice, estimate, and proposal pages for performance
 
 #### `install.php` (Installation Script)
 
@@ -190,7 +194,8 @@ modules/
 - Injects "Quick Add" button into DOM
 - Handles modal show/hide
 - Processes form submission via AJAX
-- Updates customer dropdown and invoice fields
+- Updates customer dropdown and document fields
+- Supports invoices, estimates, and proposals
 
 #### `assets/quick_customer.css` (Styles)
 
@@ -320,8 +325,8 @@ Edit `views/customer_modal.php` to change which fields are required:
 ### Hooks Used
 
 - `admin_init` - Initialize module on admin load
-- `app_admin_head` - Inject CSS/JS assets into page head
-- `app_admin_footer` - Inject modal HTML into page footer
+- `app_admin_head` - Inject CSS/JS assets into page head (on invoice, estimate, and proposal pages)
+- `app_admin_footer` - Inject modal HTML into page footer (on invoice, estimate, and proposal pages)
 
 ### AJAX Endpoint
 
@@ -440,6 +445,7 @@ We need help translating the module! To add a language:
 
 ## Roadmap
 
+- [x] Add support for estimates and proposals pages
 - [ ] Add customer templates/presets
 - [ ] Bulk customer import from modal
 - [ ] Integration with other Perfex modules
@@ -456,13 +462,11 @@ Vote for features or suggest new ones in [Issues](https://github.com/sajdoko/per
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-**Current Version:** 1.0.0
+**Current Version:** 1.1.0
 
-- Initial release
-- Quick customer creation from invoice page
-- Full billing/shipping address support
-- Auto-selection and auto-fill
-- Permission-aware functionality
+- Added support for estimates and proposals pages
+- Quick customer creation now works on invoice, estimate, and proposal pages
+- Enhanced JavaScript to support multiple customer dropdown selectors
 
 ---
 

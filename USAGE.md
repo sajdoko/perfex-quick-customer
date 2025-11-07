@@ -4,13 +4,13 @@
 
 ### Scenario
 
-You're creating an invoice and need to add a new customer quickly.
+You're creating an invoice, estimate, or proposal and need to add a new customer quickly.
 
 ### Steps
 
-1. **Open Invoice Creation**
-   - Navigate to: Sales → Invoices
-   - Click "New Invoice"
+1. **Open Document Creation**
+   - Navigate to: Sales → Invoices (or Estimates, or Proposals)
+   - Click "New Invoice" (or "New Estimate", or "New Proposal")
 
 2. **Click Quick Add Button**
    - Find the customer dropdown field
@@ -42,8 +42,8 @@ You're creating an invoice and need to add a new customer quickly.
 
 6. **Result**
    - Customer created instantly
-   - Automatically selected in invoice
-   - Ready to add invoice items
+   - Automatically selected in invoice/estimate/proposal
+   - Ready to add document items
 
 ---
 
@@ -100,7 +100,7 @@ Creating a customer with complete billing and shipping addresses.
 
 5. **Create**
    - Click "Create & Select"
-   - All addresses are now available in the invoice
+   - All addresses are now available in the document
 
 ---
 
@@ -141,7 +141,7 @@ Adding a customer from another country with VAT.
    ```
 
 4. **Create & Use**
-   - Invoice automatically uses EUR currency
+   - Invoice/Estimate/Proposal automatically uses EUR currency
    - VAT number included for EU compliance
 
 ---
@@ -167,7 +167,7 @@ Email: mike@quickbuy.com
 
 - Customer created with minimal info
 - Can add more details later from Customers section
-- Invoice can proceed immediately
+- Invoice/Estimate/Proposal can proceed immediately
 
 ---
 
@@ -213,29 +213,136 @@ Customer needs product shipped to end-customer address.
 
 ---
 
+## Example 6: Creating Estimate with New Customer
+
+### Scenario
+
+Creating a project estimate for a potential client that doesn't exist in the system yet.
+
+### Steps
+
+1. **Navigate to Estimates**
+   - Go to Sales → Estimates
+   - Click "New Estimate"
+
+2. **Click Quick Add**
+   - Click the "Quick Add" button next to the customer dropdown
+
+3. **Enter Customer Details**
+   ```
+   Company: Future Client Corp
+   First Name: Jane
+   Last Name: Smith
+   Email: jane@futureclient.com
+   Phone: +1 555-9999
+   Country: United States
+   ```
+
+4. **Create & Estimate**
+   - Click "Create & Select"
+   - Customer is now selected in the estimate
+   - Continue building your estimate
+
+### Result
+
+- New customer created in system
+- Customer auto-selected in estimate
+- Can convert to invoice later when deal closes
+
+---
+
+## Example 7: Creating Proposal for New Lead
+
+### Scenario
+
+You're preparing a proposal for a lead you just spoke with on the phone.
+
+### Steps
+
+1. **Navigate to Proposals**
+   - Go to Sales → Proposals
+   - Click "New Proposal"
+
+2. **Quick Add Customer**
+   - Click "Quick Add" button
+
+3. **Fill Minimal Info**
+   ```
+   Company: StartupXYZ Inc
+   First Name: Tom
+   Last Name: Wilson
+   Email: tom@startupxyz.com
+   Phone: +1 555-7777
+   ```
+
+4. **Save & Continue**
+   - Click "Create & Select"
+   - Customer is now in the system
+   - Proposal is linked to customer
+
+### Result
+
+- Lead is now a customer in Perfex
+- Proposal can be sent immediately
+- Future communication tracked under this customer
+
+---
+
+## Example 8: Multi-Document Workflow
+
+### Scenario
+
+Creating estimate, then proposal, then invoice for same new customer.
+
+### Steps
+
+1. **Create Customer via Estimate**
+   - Create new estimate
+   - Use Quick Add to create customer "ABC Services"
+   - Complete and send estimate
+
+2. **Create Proposal (Same Customer)**
+   - Create new proposal
+   - Select existing "ABC Services" from dropdown
+   - No need to recreate customer
+
+3. **Convert to Invoice**
+   - Customer accepts
+   - Create invoice
+   - "ABC Services" already in system
+   - All documents linked to same customer
+
+### Result
+
+- Single customer record
+- Full history: estimate → proposal → invoice
+- Clean customer relationship management
+
+---
+
 ## Workflow Comparisons
 
 ### OLD WAY (Without Module)
 
-1. Click away from invoice
+1. Click away from invoice/estimate/proposal
 2. Navigate to Customers section
 3. Click "New Customer"
 4. Fill customer form
 5. Save customer
-6. Navigate back to Invoices
-7. Click "New Invoice"
+6. Navigate back to Invoices/Estimates/Proposals
+7. Click "New Invoice/Estimate/Proposal"
 8. Search for customer
 9. Select customer
-10. Continue with invoice
+10. Continue with document
 
 **Time:** ~2-3 minutes
 
 ### NEW WAY (With Quick Customer Module)
 
-1. On invoice page, click "Quick Add"
+1. On invoice/estimate/proposal page, click "Quick Add"
 2. Fill customer form in modal
 3. Click "Create & Select"
-4. Continue with invoice
+4. Continue with document
 
 **Time:** ~30 seconds
 
@@ -281,7 +388,7 @@ Set your default country in:
 
 Choose customer's currency first:
 
-- Invoice will use correct currency
+- Document will use correct currency
 - Prevents errors later
 
 ### 6. VAT Number Format
@@ -314,7 +421,7 @@ Don't enable shipping address unless:
 Quick customer creation for online orders
 
 - Company: Customer's business name (or "Individual" + their name)
-- Email: For invoice delivery
+- Email: For invoice/document delivery
 - Shipping: End customer address
 
 ### Service Business
@@ -380,12 +487,28 @@ Quick customer records for new clients
 
 ## Advanced Examples
 
-### Using with Projects
+### Using with Estimates
 
-1. Create customer via Quick Add
-2. Customer auto-selected in invoice
+1. Create customer via Quick Add on estimate page
+2. Customer auto-selected in estimate
+3. Build estimate with line items
+4. Send estimate to customer
+5. Customer record available for future documents
+
+### Using with Proposals
+
+1. Create customer via Quick Add on proposal page
+2. Customer auto-selected in proposal
+3. Build proposal content
+4. Send proposal to customer
+5. Convert to invoice when accepted
+
+### With Projects
+
+1. Create customer with Quick Add
+2. Set up document normally
 3. Create project for customer
-4. Link invoice to project
+4. Link invoices/estimates to project
 
 ### Recurring Invoices
 
@@ -405,17 +528,24 @@ Quick customer records for new clients
 
 ## Integration Examples
 
+### Cross-Document Usage
+
+- Create customer via invoice Quick Add
+- Use same customer in estimates
+- Use same customer in proposals
+- Consistent customer data across all documents
+
 ### With Estimates Module
 
-- Works the same on Estimate pages
-- Quick Add available there too
+- Quick Add available on estimate pages
+- Create customer while building estimate
 - Customer shared across all modules
 
 ### With Proposals Module
 
-- Create customer via invoice
-- Use same customer in proposals
-- Consistent customer data
+- Quick Add available on proposal pages
+- Create customer while drafting proposal
+- Customer data synchronized system-wide
 
 ### With Projects Module
 
@@ -425,4 +555,4 @@ Quick customer records for new clients
 
 ---
 
-**Remember:** Quick Customer module is about speed and convenience during invoice creation. You can always edit and add more details to the customer record later from the Customers section!
+**Remember:** Quick Customer module is about speed and convenience during invoice, estimate, and proposal creation. You can always edit and add more details to the customer record later from the Customers section!
