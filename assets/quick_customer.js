@@ -29,8 +29,8 @@
                     return;
                 }
 
-                // Find the customer dropdown
-                var $clientSelect = $('select[name="clientid"], #clientid');
+                // Find the customer dropdown - try multiple selectors for different pages
+                var $clientSelect = $('select[name="clientid"], #clientid, select[name="rel_id"]');
 
                 if ($clientSelect.length === 0) {
                     // Try again after a delay
@@ -110,8 +110,10 @@
                             alert_float('success', response.message);
 
                             // Add new option to customer dropdown and select it
+                            // Support different dropdown selectors (invoices, estimates, proposals)
+                            var $customerDropdown = $('select[name="clientid"], #clientid, select[name="rel_id"]');
                             var newOption = new Option(response.customer.company, response.customer_id, true, true);
-                            $('#clientid').append(newOption).trigger('change');
+                            $customerDropdown.append(newOption).trigger('change');
 
                             // Trigger customer change to load billing/shipping data
                             if (typeof init_billing_and_shipping_details === 'function') {
