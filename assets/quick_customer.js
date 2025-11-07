@@ -117,7 +117,8 @@
 
                             // Add new option to customer dropdown and select it
                             // Support different dropdown selectors (invoices, estimates, proposals)
-                            var $customerDropdown = $(CUSTOMER_DROPDOWN_SELECTORS);
+                            // Use .first() to handle cases where multiple elements might match
+                            var $customerDropdown = $(CUSTOMER_DROPDOWN_SELECTORS).first();
                             var newOption = new Option(response.customer.company, response.customer_id, true, true);
                             $customerDropdown.append(newOption).trigger('change');
 
