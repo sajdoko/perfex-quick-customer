@@ -4,10 +4,10 @@
 
 [![Perfex CRM](https://img.shields.io/badge/Perfex%20CRM-2.3.0%2B-blue.svg)](https://www.perfexcrm.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-orange.svg)](CHANGELOG.md)
 [![PHP](https://img.shields.io/badge/PHP-8.1%2B-777BB4.svg)](https://php.net/)
 
-**Add customers directly from invoice pages—no more switching tabs!**
+**Add customers directly from invoice, estimate, and proposal pages—no more switching tabs!**
 
 [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
 
@@ -15,9 +15,9 @@
 
 ---
 
-## Overview
+## 📖 Overview
 
-The **Quick Customer** module streamlines your workflow by allowing you to create new customers directly from the invoice, estimate, and proposal creation pages via a convenient modal popup. No more navigating away to the customers section—stay focused on creating documents faster.
+The **Quick Customer** module streamlines your workflow by allowing you to create new customers directly from invoice, estimate, and proposal creation pages via a convenient modal popup. No more navigating away to the customers section—stay focused on your work.
 
 Perfect for:
 
